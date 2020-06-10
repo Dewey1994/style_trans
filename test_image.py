@@ -8,7 +8,7 @@ import tqdm
 from torchvision.utils import save_image
 from PIL import Image
 
-def test:
+def test():
     image_path = './image_folder'
     ckpt = './path_to_ckpt'
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -25,3 +25,7 @@ def test:
 
     fn = image_path.split("/")[-1]
     save_image(style_trans_img, f"images/outputs/stylized-{fn}")
+
+
+if __name__ == '__main__':
+    test()
