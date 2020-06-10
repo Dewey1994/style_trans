@@ -69,7 +69,7 @@ def train():
     # visualization the image
     image_samples = []
     for path in random.sample(glob.glob(f'{args.dataset_path}/*/*.{args.sample_format}'), 8):
-        image_samples += [style_transform(args.image_size)(Image.open(path))]
+        image_samples += [style_transform((args.image_size,args.image_size))(Image.open(path))]
     image_samples = torch.stack(image_samples)
     c_loss = 0
     s_loss = 0

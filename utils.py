@@ -36,6 +36,15 @@ def style_transform(img_size):
     return transform
 
 
+def test_transform():
+    transform = transforms.Compose(
+        [
+            transforms.ToTensor(),
+            transforms.Normalize(mean, std)
+        ]
+    )
+    return transform
+
 def denormalize(t):
     for c in range(3):
         t[:, c].mul_(std[c]).add_(mean[c])
