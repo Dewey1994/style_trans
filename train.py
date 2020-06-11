@@ -91,7 +91,7 @@ def train():
             style_loss = 0
             for ii, jj in zip(transformed_features, gram_style):
                 gram_t_features = gram(ii)
-                style_loss += l2_loss(gram_t_features, jj) # buyiyang
+                style_loss += l2_loss(gram_t_features, jj[:img.size(), :, :])  # buyiyang
             style_loss *= args.lambda_style
 
             loss = content_loss + style_loss
